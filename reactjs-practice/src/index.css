@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.header-wrapper {
+  padding: 10px 20px;
+  background-color: sandybrown;
+  display: flex;
+  justify-content: space-between;
+}
+.heading {
+  color: aqua;
+  margin: 0;
+}
+
+.search-form input {
+  padding: 10px 20px;
+  border-radius: 3px;
+  border: .5px solid lightgray;
+}
+
+.gif-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 30px auto;
+  width: 80%;
+  grid-gap: 25px;
+  color: gray;
+}
+.gif-img {
+  width: 80%;
+  height: 40vh;
+}
