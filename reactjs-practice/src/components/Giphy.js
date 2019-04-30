@@ -39,7 +39,7 @@ class Giphy extends Component {
                    gifs && gifs.map(gif => 
                     <div key={gif.slug}>
                         <img src={gif.images.downsized.url} alt="gif-img" className="gif-img" />
-                        <p><b>{gif.title}</b></p>
+                        <p className="gif-title"><b>{gif.title}</b></p>
                     </div>
                     )
                } 

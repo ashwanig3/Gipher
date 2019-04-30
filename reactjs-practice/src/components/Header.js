@@ -18,6 +18,7 @@ class Header extends Component {
             <div className="header-wrapper">
                <h1 className="heading">Gipher</h1> 
                <form className="search-form">
+                    <i class="fas fa-search icon"></i>
                    <input type="text" placeholder="Search Gifs" name="gif" onChange={this.handleChange} /> 
                </form>
             </div>
