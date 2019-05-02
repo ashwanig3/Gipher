@@ -32,6 +32,9 @@ body {
   grid-gap: 25px;
   color: gray;
 }
+.gif-wrapper a {
+  text-decoration: none;
+}
 .gif-img {
   width: 100%;
   height: 40vh;
@@ -45,8 +48,12 @@ body {
 }
 .gif-title {
   text-align: center;
+  text-decoration: none;
+  color: grey;
 }
-
+.gif-title:hover {
+  text-decoration: underline;
+}
 .footer-wrapper {
   background-color: #f4a460;
   padding: 10px;
