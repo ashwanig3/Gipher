@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Loader from './Loader';
 
 class Giphy extends Component {
     state = {
-        gifs: []
+        gifs: [],
+        loading: false
     }
     componentDidMount() {
         fetch('https://api.giphy.com/v1/gifs/search?q=kids&api_key=KWfYGPcB4o7FDqXP8VTx6cB8MT9V6L9E')
         .then(res => res.json())
         .then(data => {
             this.setState({
-                gifs: data.data
+                gifs: data.data,
+                loading: true
             })
         })
     }
     render() {
-        const { gifs } = this.state;
+        const { gifs, loading } = this.state;
         const { allGifs } = this.props;
    
         if(allGifs.length) { 
         return (
+            loading ?
             <div className="gif-wrapper">
             {
             allGifs && allGifs.map(gif => 
@@ -28,12 +32,12 @@ class Giphy extends Component {
                     <p><b>{gif.title}</b></p>
                 </div>
         )
-             } 
-             </div> 
+             }
+             </div>  : <Loader />
         )
         } else {
         return (
-            <div>
+            loading ? 
             <div className="gif-wrapper">
                {
                    gifs && gifs.map(gif => 
@@ -42,9 +46,8 @@ class Giphy extends Component {
                         <p className="gif-title"><b>{gif.title}</b></p>
                     </div>
                     )
-               } 
-            </div>
-            </div>
+                }
+            </div> : <Loader />
         );
     }
 }
