@@ -57,3 +57,21 @@ body {
   font-size: 12px;
   margin: 0;
 }
+.gif-modale {
+  position: relative;
+  width: 50%;
+  margin: 50px auto;
+
+}
+.gif-modale img {
+  width: 100%;
+}
+.cross-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+}

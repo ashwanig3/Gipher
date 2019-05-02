@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Loader from './Loader';
+import { Link } from 'react-router-dom';
+
 
 class Giphy extends Component {
     state = {
@@ -27,10 +29,10 @@ class Giphy extends Component {
             <div className="gif-wrapper">
             {
             allGifs && allGifs.map(gif => 
-                <div key={gif.slug}>
+                <Link to={`/gif/${gif.id}`} key={gif.slug}>
                     <img src={gif.images.downsized.url} alt="gif-img" className="gif-img" />
                     <p><b>{gif.title}</b></p>
-                </div>
+                </Link>
         )
              }
              </div>  : <Loader />
@@ -41,10 +43,10 @@ class Giphy extends Component {
             <div className="gif-wrapper">
                {
                    gifs && gifs.map(gif => 
-                    <div key={gif.slug}>
+                    <Link to={`/gif/${gif.id}`} key={gif.slug}>
                         <img src={gif.images.downsized.url} alt="gif-img" className="gif-img" />
                         <p className="gif-title"><b>{gif.title}</b></p>
-                    </div>
+                    </Link>
                     )
                 }
             </div> : <Loader />
